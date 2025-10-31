@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TextInput, Pressable } from 'react-native';
+import { View, Text, TextInput, Pressable, Alert } from 'react-native';
 import axios from "axios";
 import { styles } from './EditStyles';
 
@@ -30,10 +30,27 @@ export function Edit({ route, navigation }: any) {
             });
     }
 
+     const deletarMusica = (id: number) => {
+        axios
+            .delete(`http://127.0.0.1:8000/api/musicas/${id}`)
+            .then(() => {
+                // Atualiza a lista localmente sem precisar recarregar
+                //setMusicas(musicas.filter((item) => item.id !== id));
+                Alert.alert('✅ Sucesso', 'Música deletada com sucesso!');
+            })
+            .catch((err) => {
+                console.error('Erro ao deletar música:', err);
+                Alert.alert('❌ Erro', 'Não foi possível deletar a música.');
+            });
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.title}>Atualize uma música em sua Playlist</Text>
+                <Text style={styles.title}>Atualize ou Exclua</Text>
+                <Pressable onPress={() => deletarMusica(id)}>
+                    <Text style={{color:"red"}}>DELETAR</Text>
+                </Pressable>
             </View>
             
             <View style={styles.form}>
