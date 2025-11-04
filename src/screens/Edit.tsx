@@ -75,7 +75,7 @@ export function Edit({ route, navigation }: any) {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Text style={styles.title}>Atualize ou Exclua</Text>
-                <Pressable onPress={() => showConfirmation}>
+                <Pressable onPress={showConfirmation}>
                     <Text style={{ color: "red" }}>DELETAR</Text>
                 </Pressable>
             </View>
