@@ -4,27 +4,33 @@
     "slug": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/itunes.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/itunes.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#3e3737"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/itunes.png",
+        "backgroundColor": "#3e3737"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.saov.myapp"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/itunes.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c1637e11-ea79-49b5-8cd0-7c67ad3fbf31"
+      }
     }
   }
 }

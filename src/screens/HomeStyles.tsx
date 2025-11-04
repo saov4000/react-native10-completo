@@ -6,8 +6,10 @@ const styles = StyleSheet.create({
         backgroundColor: "#3e3737ff"
     },
     plus: {
+        borderColor: "#fff",
         padding: 30,
         alignItems: "center",
+        marginTop: 20,
         marginBottom: 10,
         flexDirection: "row",
         justifyContent: "space-between"
@@ -37,7 +39,11 @@ const styles = StyleSheet.create({
     },
 
     lista: {
-        alignSelf: 'stretch'
+        alignSelf: 'auto',
+        marginBottom: 20,
+        //borderWidth:1,
+        //borderColor:"#fff",
+        padding:10
     }
 });
 

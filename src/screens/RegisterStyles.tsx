@@ -31,13 +31,13 @@ export const styles = StyleSheet.create({
   dados:{
     fontSize: 20,
     borderBottomWidth: 1,
-    borderColor: "#fff",
-    color: "#fff",
+    borderColor: "#ffffff",
+    color: "#ffffff",
     marginBottom: 20,
     paddingBottom: 5
   },
   title: {
-    color: "#fff",
+    color: "#ffffff",
     fontSize: 20,
     marginBottom: 12,
     textAlign: "center"

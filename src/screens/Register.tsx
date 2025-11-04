@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Pressable } from 'react-native';
+import { View, Text, TextInput, Pressable, Alert } from 'react-native';
 import axios from "axios";
 import { styles } from './RegisterStyles';
+import { API_BASE_URL } from "../../apiConfig";
 
 export function Register({ navigation }: any) {
   const [nome, setNome] = useState("");
@@ -18,8 +19,11 @@ export function Register({ navigation }: any) {
         estilo: estilo.trim()
       }
       const headers: any = { "Content-Type": "application/json" };
-      const response = await axios.post("http://127.0.0.1:8000/api/musicas", payload, { headers });
-      console.log("Salvo!")
+      const response = await axios
+      //.post("http://192.168.15.113:8000/api/musicas", payload, { headers });
+      .post(`${API_BASE_URL}/api/musicas`, payload, { headers });
+      Alert.alert("Sucesso", "Música cadastrada com sucesso!");
+      console.log("Salvo!");
       navigation.navigate("home");
     } catch (error: any) {
       console.log(error)
@@ -35,21 +39,25 @@ export function Register({ navigation }: any) {
         <TextInput
           style={styles.dados}
           placeholder='nome da música'
+          placeholderTextColor="#ffffff"
           onChangeText={setNome}
         />
         <TextInput
           style={styles.dados}
           placeholder='duração da música'
+          placeholderTextColor="#ffffff"
           onChangeText={setDuracao}
         />
         <TextInput
           style={styles.dados}
           placeholder='compositor'
+          placeholderTextColor="#ffffff"
           onChangeText={setCompositor}
         />
         <TextInput
           style={styles.dados}
           placeholder='estilo'
+          placeholderTextColor="#ffffff"
           onChangeText={setEstilo}
         />
         <Pressable onPress={salvar} style={styles.botao}>
